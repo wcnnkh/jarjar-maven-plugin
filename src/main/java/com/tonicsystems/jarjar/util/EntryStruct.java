@@ -16,8 +16,6 @@
 
 package com.tonicsystems.jarjar.util;
 
-import java.io.InputStream;
-import java.io.File;
 
 public class EntryStruct
 {
