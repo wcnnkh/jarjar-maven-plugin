@@ -13,7 +13,7 @@
 
   <groupId>org.sonatype.plugins</groupId>
   <artifactId>jarjar-maven-plugin</artifactId>
-  <version>1.10-SNAPSHOT</version>
+  <version>1.10-scw</version>
 
   <name>JarJar Maven Plugin</name>
 
@@ -52,6 +52,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <forgeReleaseUrl>https://repository.sonatype.org/service/local/staging/deploy/maven2</forgeReleaseUrl>
     <asm.version>5.0.1</asm.version>
+    <maven.version>3.1.0</maven.version>
   </properties>
 
   <dependencies>
@@ -94,7 +95,6 @@
     <dependency>
       <groupId>org.codehaus.plexus</groupId>
       <artifactId>plexus-utils</artifactId>
-      <version>3.0.15</version>
     </dependency>
   </dependencies>
 
@@ -102,15 +102,13 @@
     <plugins>
       <plugin>
         <artifactId>maven-release-plugin</artifactId>
-        <version>2.5</version>
       </plugin>
       <plugin>
         <artifactId>maven-site-plugin</artifactId>
-        <version>3.1</version>
       </plugin>
       <plugin>
         <artifactId>maven-invoker-plugin</artifactId>
-        <version>1.7</version>
+        <version>3.2.1</version>
         <configuration>
           <projectsDirectory>src/it</projectsDirectory>
           <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
