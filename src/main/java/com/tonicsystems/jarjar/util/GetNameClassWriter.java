@@ -18,14 +18,15 @@ package com.tonicsystems.jarjar.util;
 
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.ClassWriter;
-import org.objectweb.asm.Opcodes;
+
+import com.tonicsystems.jarjar.Constants;
 
 public class GetNameClassWriter extends ClassVisitor
 {
     private String className;
     
     public GetNameClassWriter(int flags) {
-        super(Opcodes.ASM5,new ClassWriter(flags));
+        super(Constants.ASM_OPCODES,new ClassWriter(flags));
     }
 
     public void visit(int version, int access, String name, String signature, String superName, String[] interfaces) {

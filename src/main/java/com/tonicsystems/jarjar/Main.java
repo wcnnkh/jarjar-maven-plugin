@@ -49,10 +49,6 @@ public class Main {
       return sb.toString();
   }
 
-  private boolean verbose;
-  private List patterns;
-  private int level = DepHandler.LEVEL_CLASS;
-
   public static void main(String[] args) throws Exception {
     MainUtil.runMain(new Main(), args, "help");
   }
