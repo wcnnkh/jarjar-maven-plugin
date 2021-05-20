@@ -16,11 +16,13 @@
 
 package com.tonicsystems.jarjar;
 
-import com.tonicsystems.jarjar.util.*;
-import java.io.File;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.tools.ant.BuildException;
+
+import com.tonicsystems.jarjar.util.AntJarProcessor;
 
 public class JarJarTask extends AntJarProcessor
 {

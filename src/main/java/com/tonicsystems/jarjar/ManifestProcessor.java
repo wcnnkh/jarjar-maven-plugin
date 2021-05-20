@@ -16,9 +16,10 @@
 
 package com.tonicsystems.jarjar;
 
-import com.tonicsystems.jarjar.util.*;
 import java.io.IOException;
-import java.util.*;
+
+import com.tonicsystems.jarjar.util.EntryStruct;
+import com.tonicsystems.jarjar.util.JarProcessor;
 
 class ManifestProcessor implements JarProcessor
 {

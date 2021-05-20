@@ -16,12 +16,23 @@
 
 package com.tonicsystems.jarjar;
 
-import com.tonicsystems.jarjar.util.*;
-import java.io.*;
-import java.util.*;
-import org.objectweb.asm.*;
-import org.objectweb.asm.Type;
-import org.objectweb.asm.commons.*;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import org.objectweb.asm.ClassReader;
+import org.objectweb.asm.ClassVisitor;
+import org.objectweb.asm.commons.Remapper;
+import org.objectweb.asm.commons.RemappingClassAdapter;
+
+import com.tonicsystems.jarjar.util.EntryStruct;
+import com.tonicsystems.jarjar.util.JarProcessor;
 
 // TODO: this can probably be refactored into JarClassVisitor, etc.
 class KeepProcessor extends Remapper implements JarProcessor
@@ -57,7 +68,6 @@ class KeepProcessor extends Remapper implements JarProcessor
     }
 
     private Set<String> curSet;
-    private byte[] buf = new byte[0x2000];
 
     public boolean process(EntryStruct struct) throws IOException {
         try {

@@ -55,9 +55,9 @@ class MainUtil
 
     private static Object[] bindParameters(Method method, String[] args) {
         List<Object> parameters = new ArrayList<Object>();
-        Class[] parameterTypes = method.getParameterTypes();
+        Class<?>[] parameterTypes = method.getParameterTypes();
         for (int i = 0, len = parameterTypes.length; i < len; i++) {
-            Class type = parameterTypes[i];
+            Class<?> type = parameterTypes[i];
             int remaining = Math.max(0, args.length - i);
             if (type.equals(String[].class)) {
                 String[] rest = new String[remaining];
@@ -72,7 +72,7 @@ class MainUtil
         return parameters.toArray();
     }
 
-    private static Object convertParameter(String arg, Class type) {
+    private static Object convertParameter(String arg, Class<?> type) {
         if (type.equals(String.class)) {
             return arg;
         } else if (type.equals(Integer.class)) {

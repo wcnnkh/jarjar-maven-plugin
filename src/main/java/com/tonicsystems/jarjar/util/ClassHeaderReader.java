@@ -16,9 +16,12 @@
 
 package com.tonicsystems.jarjar.util;
 
-import java.io.*;
+import java.io.ByteArrayInputStream;
+import java.io.DataInputStream;
+import java.io.EOFException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.Array;
-import java.util.*;
 
 public class ClassHeaderReader
 {
